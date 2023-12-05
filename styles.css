@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    /* 這將使容器占滿整個視窗高度 */
+}
+
+.navbar {
+    border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 將內容水平置中 */
+  align-items: center; /* 將內容垂直置中 */
+}
+.navbar-nav {
+    margin: 10px; /* 清除預設的 margin */
+    padding: 0; /* 清除預設的 padding */
+  }
+  
+  .navbar-nav .nav-item {
+    margin-right: 30px; /* 選項之間的右側間隔 */
+  }
+  
