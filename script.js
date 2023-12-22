@@ -109,18 +109,36 @@ modeToggle.addEventListener('click', () => {
 });
 
 //-----------Scroll To Discover--------------//
-document.addEventListener("DOMContentLoaded", function () {
-    // 獲取 "Scroll To Discover" 元素
-    var scrollToDiscover = document.getElementById("scroll-to-discover");
-  
-    // 獲取目標區域元素
-    var discoverSection = document.getElementById("discover-section");
-  
-    // 監聽點擊事件
-    scrollToDiscover.addEventListener("click", function () {
-      // 滾動到目標區域
-      discoverSection.scrollIntoView({ behavior: "smooth" });
+document.addEventListener('DOMContentLoaded', function () {
+    var scrollToDiscover = document.getElementById('scroll-to-discover');
+
+    scrollToDiscover.addEventListener('click', function () {
+        // 获取要滚动到的目标元素，例如下面的 discover-section
+        var targetElement = document.getElementById('discover-section');
+
+        // 获取目标元素相对于视口的位置
+        var rect = targetElement.getBoundingClientRect();
+
+        // 计算滚动目标位置
+        var scrollTarget = rect.top + window.scrollY;
+
+        // 使用 smooth 滚动效果
+        window.scrollTo({
+            top: scrollTarget,
+            behavior: 'smooth'
+        });
     });
-  });
+});
+
   
-  
+  //-----------画面缩小list响应式动作-----------//
+  document.addEventListener('DOMCont,baoqentLoaded', function () {
+    var hamburgerMenu = document.getElementById('hamburger-menu');
+    var navList = document.querySelector('.nav-list');
+
+    hamburgerMenu.addEventListener('click', function () {
+        // 切换新的导航栏的 "active" 类
+        navList.classList.toggle('active');
+    });
+});
+
